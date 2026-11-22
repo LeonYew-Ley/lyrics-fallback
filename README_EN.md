@@ -1,16 +1,13 @@
 # lyrics-fallback
 
-<p align="center">
-  ⚡ <a href="https://afdian.com/a/leonyew">Afdian</a>
-  &nbsp;·&nbsp;
-  ☕ <a href="https://ko-fi.com/leonyew">Ko-fi</a>
-  <br><br>
-  <strong>Languages</strong>
-  &nbsp;·&nbsp;
-  <a href="README.md">中文</a>
-  &nbsp;·&nbsp;
-  <a href="README_EN.md">English</a>
-</p>
+<div align="center">
+
+[![Afdian](https://img.shields.io/badge/Afdian-946CE6?style=for-the-badge&logo=afdian&logoColor=white)](https://afdian.com/a/leonyew)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-FF6433?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/leonyew)
+
+**Languages** · [中文](README.md) · [English](README_EN.md)
+
+</div>
 
 This is a [Spicetify](https://spicetify.app) extension that uses Spotify's native lyrics panel. Official Spotify lyrics always win. Fallback sources are tried in order only when official lyrics are missing.
 
@@ -18,7 +15,9 @@ The settings UI follows the Spotify client language (Chinese and English for now
 
 ## Effect
 
-Fallback lyrics appear in Spotify's official lyrics panel.
+Fallback lyrics appear in Spotify's official lyrics panel:
+
+![Fallback lyrics in the official lyrics panel](screenshots/en/lyrics-panel.png)
 
 ## Install
 
@@ -46,6 +45,10 @@ Then restart Spotify.
 ## How to use
 
 Click the **profile avatar in the top-right corner** of Spotify, then choose **Lyrics Fallback**.
+
+![Open Lyrics Fallback from the profile menu](screenshots/en/settings-menu.png)
+
+![Lyrics Fallback settings](screenshots/en/settings.png)
 
 In the settings page you can:
 

@@ -1,16 +1,13 @@
 # lyrics-fallback
 
-<p align="center">
-  ⚡ <a href="https://afdian.com/a/leonyew">爱发电</a>
-  &nbsp;·&nbsp;
-  ☕ <a href="https://ko-fi.com/leonyew">Ko-fi</a>
-  <br><br>
-  <strong>Languages</strong>
-  &nbsp;·&nbsp;
-  <a href="README.md">中文</a>
-  &nbsp;·&nbsp;
-  <a href="README_EN.md">English</a>
-</p>
+<div align="center">
+
+[![爱发电](https://img.shields.io/badge/爱发电-946CE6?style=for-the-badge&logo=afdian&logoColor=white)](https://afdian.com/a/leonyew)
+[![Ko-fi](https://img.shields.io/badge/Ko--fi-FF6433?style=for-the-badge&logo=kofi&logoColor=white)](https://ko-fi.com/leonyew)
+
+**Languages** · [中文](README.md) · [English](README_EN.md)
+
+</div>
 
 这是一个 [Spicetify](https://spicetify.app) 扩展，使用 Spotify 官方歌词界面。官方歌词始终优先；只有在官方歌词缺失时，才会按顺序尝试备用歌词源。
 
