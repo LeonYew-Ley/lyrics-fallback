@@ -18,6 +18,7 @@ const files = [
   "src/providers/lrcmux.js",
   "src/providers/registry.js",
   "src/settings-store.js",
+  "src/i18n.js",
   "src/fallback.js",
   "src/network.js",
   "src/query-cache.js",

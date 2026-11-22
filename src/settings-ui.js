@@ -110,17 +110,17 @@ LF.settings.el = function settingsEl(tag, attrs, children) {
 };
 
 LF.settings.statusLabel = function statusLabel(status) {
-  if (status === "synced") return "同步歌词";
-  if (status === "unsynced") return "仅纯文本";
-  if (status === "error") return "出错";
-  if (status === "testing") return "测试中…";
-  return "未找到";
+  if (status === "synced") return LF.t("statusSynced");
+  if (status === "unsynced") return LF.t("statusUnsynced");
+  if (status === "error") return LF.t("statusError");
+  if (status === "testing") return LF.t("statusTesting");
+  return LF.t("statusMiss");
 };
 
 LF.settings.trackLabel = function trackLabel(track) {
-  if (!track) return "当前没有在播的歌";
+  if (!track) return LF.t("noTrack");
   const name = [track.title, track.artist].filter(Boolean).join(" — ");
-  return "当前曲目：" + name;
+  return LF.t("currentTrack", { name: name });
 };
 
 LF.settings.isDefaultOrder = function isDefaultOrder(ids) {
@@ -183,8 +183,8 @@ LF.settings.renumber = function renumber(host) {
 LF.settings.dragHandle = function dragHandle() {
   return LF.settings.el("span", {
     className: "lf-settings-handle",
-    title: "拖动以调整顺序",
-    "aria-label": "拖动以调整顺序",
+    title: LF.t("dragHandle"),
+    "aria-label": LF.t("dragHandle"),
     html:
       '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="5" cy="3" r="1.15" fill="currentColor"/><circle cx="11" cy="3" r="1.15" fill="currentColor"/><circle cx="5" cy="8" r="1.15" fill="currentColor"/><circle cx="11" cy="8" r="1.15" fill="currentColor"/><circle cx="5" cy="13" r="1.15" fill="currentColor"/><circle cx="11" cy="13" r="1.15" fill="currentColor"/></svg>',
   });
@@ -454,7 +454,7 @@ LF.settings.setRowResult = function setRowResult(id, result) {
   if (!result) return;
   if (result.status === "testing") {
     slot.appendChild(
-      LF.settings.el("span", { className: "lf-settings-spinner", "aria-label": "测试中" })
+      LF.settings.el("span", { className: "lf-settings-spinner", "aria-label": LF.t("statusTesting") })
     );
     return;
   }
@@ -515,7 +515,7 @@ LF.settings.runLatencyTest = async function runLatencyTest() {
   LF.settings.testing = true;
   if (LF.settings.testButton) {
     LF.settings.testButton.disabled = true;
-    LF.settings.testButton.textContent = "测试中…";
+    LF.settings.testButton.textContent = LF.t("testing");
   }
   const current = LF.currentTrack();
   const track = current || LF.sampleTrack();
@@ -541,7 +541,7 @@ LF.settings.runLatencyTest = async function runLatencyTest() {
     LF.settings.testing = false;
     if (LF.settings.testButton) {
       LF.settings.testButton.disabled = false;
-      LF.settings.testButton.textContent = "测试各源延迟";
+      LF.settings.testButton.textContent = LF.t("testButton");
     }
   }
 };
@@ -601,15 +601,15 @@ LF.settings.build = function buildSettings() {
   root.appendChild(style);
   root.appendChild(
     LF.settings.el("p", {
-      text: "官方 Spotify 歌词始终优先。下面的源只在官方歌词缺失时，按从上到下的顺序尝试。拖动列表即可调整顺序，调整后会保存在本地。",
+      text: LF.t("intro"),
     })
   );
 
   const reset = LF.settings.el("button", {
     type: "button",
     className: "lf-settings-reset",
-    title: "恢复默认顺序",
-    "aria-label": "恢复默认顺序",
+    title: LF.t("resetTitle"),
+    "aria-label": LF.t("resetTitle"),
     html:
       '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3.15-6.75"></path><polyline points="21 3 21 9 15 9"></polyline></svg>',
     onClick: function () {
@@ -623,7 +623,7 @@ LF.settings.build = function buildSettings() {
   const testButton = LF.settings.el("button", {
     type: "button",
     className: "lf-settings-primary",
-    text: "测试各源延迟",
+    text: LF.t("testButton"),
     onClick: function () {
       LF.settings.runLatencyTest();
     },
@@ -631,7 +631,7 @@ LF.settings.build = function buildSettings() {
   LF.settings.testButton = testButton;
 
   const heading = LF.settings.el("div", { className: "lf-settings-heading" }, [
-    LF.settings.el("h3", { text: "歌词源顺序" }),
+    LF.settings.el("h3", { text: LF.t("orderHeading") }),
     resetSlot,
     testButton,
   ]);
@@ -668,7 +668,7 @@ LF.openSettings = function openSettings() {
     LF.settings.disposeWarmDrag();
     const root = LF.settings.build();
     Spicetify.PopupModal.display({
-      title: "Lyrics Fallback",
+      title: LF.t("appName"),
       content: root,
       isLarge: true,
     });
@@ -689,7 +689,7 @@ LF.installSettingsMenu = function installSettingsMenu() {
     return false;
   }
   try {
-    const item = new Spicetify.Menu.Item("Lyrics Fallback", false, function () {
+    const item = new Spicetify.Menu.Item(LF.t("appName"), false, function () {
       LF.openSettings();
     });
     item.register();
