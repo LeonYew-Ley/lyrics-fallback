@@ -1,26 +1,30 @@
 # lyrics-fallback
 
-<p>
-  <a href="https://afdian.com/a/leonyew"><img src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="爱发电" height="36"></a>
-  &nbsp;
-  <a href="https://ko-fi.com/leonyew"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" height="36"></a>
+<p align="center">
+  ⚡ <a href="https://afdian.com/a/leonyew">爱发电</a>
+  &nbsp;·&nbsp;
+  ☕ <a href="https://ko-fi.com/leonyew">Ko-fi</a>
+  <br><br>
+  <strong>Languages</strong>
+  &nbsp;·&nbsp;
+  <a href="README.md">中文</a>
+  &nbsp;·&nbsp;
+  <a href="README_EN.md">English</a>
 </p>
 
-[中文](README.md) | [English](README_EN.md)
+这是一个 [Spicetify](https://spicetify.app) 扩展，使用 Spotify 官方歌词界面。官方歌词始终优先；只有在官方歌词缺失时，才会按顺序尝试备用歌词源。
 
-独立的 [Spicetify](https://spicetify.app) 扩展，使用 Spotify 官方歌词界面。官方歌词始终优先；只有在官方歌词缺失时，才会按顺序尝试备用歌词源。
-
-界面语言跟随 Spotify（目前支持中文和英文）。
+界面语言跟随 Spotify 客户端（目前支持中文和英文）。
 
 ## 效果
 
-备用歌词会显示在 Spotify 自带的歌词面板中：
+备用歌词会显示在 Spotify 官方歌词面板中：
 
-![在官方歌词面板中显示备用歌词](screenshots/lyrics-panel.png)
+![在官方歌词面板中显示备用歌词](screenshots/zh/lyrics-panel.png)
 
 ## 安装
 
-请先安装 [Spicetify](https://spicetify.app)（官方文档：https://spicetify.app 或 https://spicetify.co），再安装本扩展。
+请先安装 [Spicetify](https://spicetify.app)（官方文档：[spicetify.app](https://spicetify.app) 或 [spicetify.co](https://spicetify.co)），再安装本扩展。本扩展依赖 Spicetify 提供的接口，Marketplace 与手动安装都需要先完成 Spicetify 的安装与应用。
 
 ### Marketplace
 
@@ -28,22 +32,26 @@
 
 ### 手动安装
 
+手动安装同样需要已安装并应用过 Spicetify。仅把文件复制到扩展目录，并不能在未安装 Spicetify 的 Spotify 中使用本扩展。
+
 1. 将仓库中的 `dist/lyrics-fallback.js` 复制到 Spicetify 扩展目录：
    - Windows：`%APPDATA%\spicetify\Extensions\lyrics-fallback.js`
-2. 在终端运行：
+2. 在终端中运行：
 
 ```bash
 spicetify config extensions lyrics-fallback.js
 spicetify apply
 ```
 
-## 设置
+然后重新打开 Spotify。
+
+## 使用方法
 
 点击 Spotify **右上角头像**，在菜单中选择 **Lyrics Fallback**。
 
-![从右上角头像菜单打开 Lyrics Fallback](screenshots/settings-menu.png)
+![从右上角头像菜单打开 Lyrics Fallback](screenshots/zh/settings-menu.png)
 
-![Lyrics Fallback 设置页](screenshots/settings.png)
+![Lyrics Fallback 设置页](screenshots/zh/settings.png)
 
 在设置页可以：
 

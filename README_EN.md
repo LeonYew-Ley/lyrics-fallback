@@ -1,26 +1,28 @@
 # lyrics-fallback
 
-<p>
-  <a href="https://afdian.com/a/leonyew"><img src="https://pic1.afdiancdn.com/static/img/welcome/button-sponsorme.png" alt="Afdian" height="36"></a>
-  &nbsp;
-  <a href="https://ko-fi.com/leonyew"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi" height="36"></a>
+<p align="center">
+  ⚡ <a href="https://afdian.com/a/leonyew">Afdian</a>
+  &nbsp;·&nbsp;
+  ☕ <a href="https://ko-fi.com/leonyew">Ko-fi</a>
+  <br><br>
+  <strong>Languages</strong>
+  &nbsp;·&nbsp;
+  <a href="README.md">中文</a>
+  &nbsp;·&nbsp;
+  <a href="README_EN.md">English</a>
 </p>
 
-[中文](README.md) | [English](README_EN.md)
+This is a [Spicetify](https://spicetify.app) extension that uses Spotify's native lyrics panel. Official Spotify lyrics always win. Fallback sources are tried in order only when official lyrics are missing.
 
-A standalone [Spicetify](https://spicetify.app) extension that uses Spotify’s native lyrics panel. Official Spotify lyrics always win. Fallback sources are tried in order only when official lyrics are missing.
-
-The settings UI follows Spotify’s language (Chinese and English for now).
+The settings UI follows the Spotify client language (Chinese and English for now).
 
 ## Effect
 
-Fallback lyrics appear in Spotify’s built-in lyrics panel:
-
-![Fallback lyrics in the official lyrics panel](screenshots/lyrics-panel.png)
+Fallback lyrics appear in Spotify's official lyrics panel.
 
 ## Install
 
-Install [Spicetify](https://spicetify.app) first (official docs: https://spicetify.app or https://spicetify.co), then install this extension.
+Install [Spicetify](https://spicetify.app) first (official docs: [spicetify.app](https://spicetify.app) or [spicetify.co](https://spicetify.co)), then install this extension. Lyrics Fallback depends on Spicetify's APIs, so both Marketplace and manual install require Spicetify to already be installed and applied.
 
 ### Marketplace
 
@@ -28,22 +30,22 @@ Open Spicetify Marketplace in Spotify, search for **Lyrics Fallback**, and insta
 
 ### Manual install
 
+Manual install also requires Spicetify. Copying the file into the extensions folder is not enough if Spicetify has not already been installed and applied to Spotify.
+
 1. Copy `dist/lyrics-fallback.js` from this repository to the Spicetify extensions folder:
    - Windows: `%APPDATA%\spicetify\Extensions\lyrics-fallback.js`
-2. Run:
+2. In a terminal, run:
 
 ```bash
 spicetify config extensions lyrics-fallback.js
 spicetify apply
 ```
 
-## Settings
+Then restart Spotify.
 
-Click the **profile avatar** in the top-right corner of Spotify, then choose **Lyrics Fallback**.
+## How to use
 
-![Open Lyrics Fallback from the profile menu](screenshots/settings-menu.png)
-
-![Lyrics Fallback settings](screenshots/settings.png)
+Click the **profile avatar in the top-right corner** of Spotify, then choose **Lyrics Fallback**.
 
 In the settings page you can:
 

@@ -2,7 +2,7 @@
   {
     "name": "Lyrics Fallback",
     "description": "Uses Spotify's native lyrics panel. Official lyrics always win; when they are missing, configured fallback providers are tried in order.",
-    "preview": "screenshots/lyrics-panel.png",
+    "preview": "screenshots/zh/lyrics-panel.png",
     "main": "dist/lyrics-fallback.js",
     "readme": "README.md",
     "authors": [
