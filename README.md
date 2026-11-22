@@ -77,3 +77,10 @@ Then restart Spotify so the new file is loaded. Only run `spicetify apply` if Sp
 2. Register it in `src/providers/registry.js`.
 3. Append the id to `LF.config.defaultProviders` in `src/config.js` (order is the built-in default priority). Users who already saved a custom order keep that order, with new providers appended.
 4. Rebuild.
+
+## Support
+
+If this extension is useful, you can optionally sponsor continued work here:
+
+- [爱发电](https://afdian.com/a/leonyew)
+- [Ko-fi](https://ko-fi.com/leonyew)
