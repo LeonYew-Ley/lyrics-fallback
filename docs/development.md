@@ -26,6 +26,8 @@ Tried in this order by default (first usable hit wins). Official color-lyrics / 
 
 Genius and Musixmatch are not included because they require an access token or secret key. Saved orders that still contain `qq` drop that id and append `lrcmux` if it is missing.
 
+LRCLIB tries exact `get` / `search` queries first. If none is usable, it retries with title-only search and scores candidates by normalized artist, album, title, and duration. Title-only candidates need synced lyrics, must not be live/remix/instrumental (unless the current track is), and must be within 2 seconds. A candidate without an artist or album match is accepted only when it is the sole candidate.
+
 The settings UI follows the Spotify client language via `Spicetify.Locale.getLocale()` (with `Spicetify.Platform.Session.locale` and `navigator.language` as fallbacks). Chinese locales (`zh`, `zh-CN`, `zh-TW`, `zh-HK`, …) use the Chinese UI; all other locales use English.
 
 ## Source layout
